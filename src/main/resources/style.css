@@ -1,0 +1,35 @@
+.fill {
+    -fx-text-fill: white;
+    -fx-background-color: inherit;
+    -fx-border-width: 0 0 2 0;
+    -fx-border-color: white;
+    -fx-font-size: 18px;
+}
+
+.fill:hover {
+    -fx-background-color: #525d6e;
+}
+.fill:focused {
+    -fx-background-color: #525d6e;
+}
+
+.btn1:hover {
+    -fx-background-color: #000a1a !important;
+}
+.searchIt:hover {
+    -fx-cursor: HAND;
+    -fx-background-color: #525d6e !important;
+    -fx-text-fill: white !important;
+}
+
+.searchIt:focused {
+    -fx-text-fill: white !important;
+}
+
+
+.helpLabel:hover {
+    -fx-background-color: #a6a6a6 !important;
+}
+.helpLabel:focused {
+     -fx-background-color: #a6a6a6 ;
+ }
