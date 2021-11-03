@@ -3,6 +3,7 @@ package sample.api;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import okhttp3.*;
+import sample.Main;
 import sample.data.LocationData;
 import sample.data.WeeklyData;
 
@@ -13,12 +14,9 @@ import java.util.List;
 import java.util.Objects;
 
 public class WeeklyDataClient {
-    private static final String apikey = "d9c7e8272681f3ed9b90c3e4bdf341f2";
-    private static final String appid = "6ecec3cd";
 
     public static Request createRequest(Double lat, Double lng) throws NullPointerException {
-        //http://api.weatherunlocked.com/api/forecast/73.13,33.71?app_id=6ecec3cd&app_key=d9c7e8272681f3ed9b90c3e4bdf341f2
-        final String url = "http://api.weatherunlocked.com/api/forecast/" + lat + "," + lng + "?app_id=" + appid + "&app_key=" + apikey;
+        final String url = "http://api.weatherunlocked.com/api/forecast/" + lat + "," + lng + "?app_id=" + Main.apikey_weekly + "&app_key=" + Main.appid_weekly;
         final HttpUrl.Builder urlbuilder = Objects.requireNonNull(HttpUrl.parse(url)).newBuilder();
         return new Request.Builder().url(urlbuilder.toString()).addHeader("Accept","application/json").build();
     }

@@ -2,6 +2,7 @@ package sample.api;
 
 import com.google.gson.Gson;
 import okhttp3.*;
+import sample.Main;
 import sample.data.LocationData;
 
 import java.io.IOException;
@@ -9,10 +10,8 @@ import java.util.Objects;
 
 public class LocationDataClient {
 
-    private static final String apikey = "64f72ca788fe4529ba4d12e7a6373f8e";
-
     public static Request createRequest(String cityname) throws NullPointerException {
-        final String url = "https://api.opencagedata.com/geocode/v1/json?key=" + apikey + "&q=" + cityname + "&pretty=1&lang=en";
+        final String url = "https://api.opencagedata.com/geocode/v1/json?key=" + Main.apikey_location + "&q=" + cityname + "&pretty=1&lang=en";
         final HttpUrl.Builder urlbuilder = Objects.requireNonNull(HttpUrl.parse(url)).newBuilder();
         return new Request.Builder().url(urlbuilder.toString()).build();
     }

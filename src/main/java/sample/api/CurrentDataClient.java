@@ -3,6 +3,7 @@ package sample.api;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import okhttp3.*;
+import sample.Main;
 import sample.data.CurrentData;
 
 import java.io.IOException;
@@ -17,11 +18,9 @@ public class CurrentDataClient {
             .writeTimeout(15,TimeUnit.SECONDS)
             .build();
 
-    private static final String apikey = "cf486f6fece615336cd7e630771bfa20";
-    private static final String url = "http://api.weatherunlocked.com/forecast/London?app_id=6ecec3cd&api_key=d9c7e8272681f3ed9b90c3e4bdf341f2";
 
     public static Request createRequest(String cityname) throws NullPointerException {
-        final String url = "https://api.openweathermap.org/data/2.5/weather?" + "appid=" + apikey + "&units=metric&q=" + cityname;
+        final String url = "https://api.openweathermap.org/data/2.5/weather?" + "appid=" + Main.apikey_current + "&units=metric&q=" + cityname;
         final HttpUrl.Builder urlBuilder = Objects.requireNonNull(HttpUrl.parse(url)).newBuilder();
         return new Request.Builder().url(urlBuilder.toString()).build();
     }

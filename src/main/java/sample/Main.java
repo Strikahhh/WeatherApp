@@ -21,15 +21,22 @@ import okhttp3.*;
 import java.io.*;
 import java.lang.reflect.Array;
 import java.lang.reflect.Type;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class Main extends Application {
 
     private double xOffset;
     private double yOffset;
+    public static Properties properties = loadProperties();
+    public static String apikey_weekly = properties.getProperty("apikey.weekly");
+    public static String appid_weekly = properties.getProperty("appid.weekly");
+    public static String apikey_location = properties.getProperty("apikey.location");
+    public static String apikey_current = properties.getProperty("apikey.current");
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -62,6 +69,21 @@ public class Main extends Application {
         launch(args);
     }
 
+
+    private static Properties loadProperties() {
+        final Properties properties = new Properties();
+        try (InputStream is = Main.class.getResourceAsStream("/config.properties")) {
+            if (is != null) properties.load(is);
+            else {
+                System.out.println("Resource config.properties not found");
+                System.exit(-1);
+            }
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        return properties;
+    }
 
     // Region fileRelated
 
