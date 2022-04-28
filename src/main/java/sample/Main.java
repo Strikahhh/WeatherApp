@@ -1,32 +1,21 @@
 package sample;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonSyntaxException;
-import com.google.gson.annotations.SerializedName;
-
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import javafx.application.Application;
-import javafx.event.EventHandler;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import okhttp3.*;
 
 import java.io.*;
-import java.lang.reflect.Array;
 import java.lang.reflect.Type;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
 public class Main extends Application {
 

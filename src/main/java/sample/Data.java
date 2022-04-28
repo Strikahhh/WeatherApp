@@ -1,7 +1,5 @@
 package sample;
 
-import java.util.List;
-
 public class Data {
     private String name;
     private Integer id;

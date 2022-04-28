@@ -1,16 +1,11 @@
 package sample.api;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import okhttp3.*;
 import sample.Main;
-import sample.data.LocationData;
 import sample.data.WeeklyData;
 
 import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 public class WeeklyDataClient {
