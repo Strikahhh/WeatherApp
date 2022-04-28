@@ -37,6 +37,7 @@ public class Main extends Application {
     public static String appid_weekly = properties.getProperty("appid.weekly");
     public static String apikey_location = properties.getProperty("apikey.location");
     public static String apikey_current = properties.getProperty("apikey.current");
+    public static String fileLocation = properties.getProperty("file.location");
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -60,9 +61,9 @@ public class Main extends Application {
     }
 
 
-    private static final String citiesPath = "C:\\Users\\Domen\\Desktop\\new\\cities.txt";
-    private static final String idPath = "C:\\Users\\Domen\\Desktop\\new\\citiesId.txt";
-    private static final String jsonList = "C:\\Users\\Domen\\Desktop\\new\\city.list.json";
+    private static final String citiesPath = fileLocation + "cities.txt";
+    private static final String idPath = fileLocation + "citiesId.txt";
+    private static final String jsonList = fileLocation + "city.list.json";
 
 
     public static void main(String[] args) {
